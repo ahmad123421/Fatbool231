@@ -35,7 +35,8 @@ public class Teams2 extends AppCompatActivity implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent i = new Intent(this, TeamsInfo.class);
+        Intent i = new Intent(this,HighscoresInfo.class);
+
         i.putExtra("team",position);
         startActivity(i);
     }
