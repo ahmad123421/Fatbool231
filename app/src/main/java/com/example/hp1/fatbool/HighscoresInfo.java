@@ -21,6 +21,7 @@ public class HighscoresInfo extends AppCompatActivity {
         updateInfo(team);
     }
 
+
     private void updateInfo(int highscores) {
         if(highscores == 0){
             tvInfo.setText("Founded in 1899 by a group of Swiss, English and Catalan footballers led by Joan Gamper, the club has become a symbol of Catalan culture and Catalanism, hence the motto \"Més que un club\" (English: \"More than a club\"). Unlike many other football clubs, the supporters own and operate Barcelona. It is the second most valuable sports team in the world, worth $3.56 billion, and the world's second richest football club in terms of revenue, with an annual turnover of €560.8 million.The official Barcelona anthem is the \"Cant del Barça\", written by Jaume Picas and Josep Maria Espinàs.");
