@@ -1,10 +1,13 @@
 package com.example.hp1.fatbool;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +16,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, DialogInterface.OnClickListener {
     Button bt1, bt2, bt3;
+    NotificationCompat.Builder builder;
+    Button btnNotify;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt2.setOnClickListener(this);
         bt3 = (Button) findViewById(R.id.btPictures);
         bt3.setOnClickListener(this);
+
+        btnNotify = (Button) findViewById(R.id.btnoty);
+
+        builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(R.drawable.barca);
+        builder.setContentTitle("Nice");
+        builder.setContentText("Good");
+        Intent bIntent = new Intent(this, TeamsInfo.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, bIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+        btnNotify.setOnClickListener(this);
 
 
     }
@@ -47,7 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    public void onClick(View v) {
+
+
+
+        public void onClick(View v) {
         Intent i = new Intent(this, Teams2.class);
         Intent k = new Intent(this, Pictures.class);
         Intent j = new Intent(this, Highscores.class);
@@ -61,8 +81,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == bt2) {
             startActivity(j);
         }
-
-
+        if (v==btnNotify) {
+            NotificationManager manager = (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+            manager.notify(0, builder.build());
+        }
     }
 
     public void onBackPressed() {
