@@ -19,7 +19,10 @@
         <activity android:name=".TeamsInfo" />
         <activity android:name=".Pictures" />
         <activity android:name=".Highscores" />
-        <activity android:name=".HighscoresInfo"></activity>
+        <activity android:name=".HighscoresInfo" />
+        <activity android:name=".CameraActivity">
+
+        </activity>
     </application>
 
 </manifest>
