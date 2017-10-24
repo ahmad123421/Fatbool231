@@ -59,7 +59,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         }
         else if(requestCode == SELECT_IMAGE && resultCode == RESULT_OK){
             Uri targetUri= data.getData();
-            Toast.makeText(getApplicationContext(), targetUri.toString(), 1000).show();
+            Toast.makeText(getApplicationContext(), targetUri.toString(), Toast.LENGTH_LONG).show();
             //textTargetUri.setText(targetUri.toString());
             Bitmap bitmap;
            try {
