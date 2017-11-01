@@ -94,6 +94,12 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         }
 
     }
+
+    /**
+     *
+     * @param bitmap -contain taken image data
+     * @return the method returns file path of the image of type file
+     */
     public File saveImage(Bitmap bitmap){
         File root = Environment.getExternalStorageDirectory();// internal storage launching .
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
